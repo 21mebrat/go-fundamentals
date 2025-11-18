@@ -9,18 +9,17 @@ import (
 	"runtime"
 )
 
-// -------------------- CLI COMMAND STRUCT --------------------
 type cliCommand struct {
 	name        string
 	description string
 	callback    func(args []string) error
 }
 
-// Declare commands map globally (but do NOT initialize here)
+// Declare commands map
 var commands map[string]cliCommand
 
 func main() {
-	// Initialize commands inside main to avoid initialization cycle
+	// Initialize commands
 	commands = map[string]cliCommand{
 		"exit": {
 			name:        "exit",
@@ -84,7 +83,7 @@ func main() {
 	}
 }
 
-// -------------------- CD COMMAND --------------------
+// CD COMMAND
 func handleCd(args []string) {
 	if len(args) == 0 {
 		fmt.Println("cd requires a directory")
@@ -113,7 +112,7 @@ func handleCd(args []string) {
 	}
 }
 
-// -------------------- OS COMMANDS --------------------
+// OS COMMANDS
 func runCommand(input string) {
 	var cmd *exec.Cmd
 	if runtime.GOOS == "windows" {
@@ -131,14 +130,14 @@ func runCommand(input string) {
 	}
 }
 
-// -------------------- EXIT COMMAND --------------------
+// EXIT COMMAND
 func commandExit(args []string) error {
 	fmt.Println("Closing the terminal... Goodbye!")
 	os.Exit(0)
 	return nil
 }
 
-// -------------------- HELP COMMAND --------------------
+// HELP COMMAND
 func commandHelp(args []string) error {
 	fmt.Println("Welcome to the terminal!")
 	fmt.Println("Available commands:")
