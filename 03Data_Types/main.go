@@ -1,11 +1,14 @@
-// Data Types
+//	Basic Data Types
+//
 // Integers, floating points, booleans, complex numbers, and strings.
 package main
+
 import "fmt"
+
 func main() {
 
 	// Section1: Integers
-	// Section1-A: signed integers
+	// Section1-A: signed integers : it can hold both postive and negative values
 	var i int
 	var i8 int8
 	var i16 int16
@@ -18,8 +21,8 @@ func main() {
 	i16 = -32768
 	i32 = 2147483647
 	i64 = -9223372036854775808
-	
-	// Section1-B: unsigned integers
+
+	// Section1-B: unsigned integers : it can hold only positive values
 	var u uint
 	var u8 uint8
 	var u16 uint16
@@ -36,10 +39,11 @@ func main() {
 	// Printing the signed and unsigned integer variables to the console
 	fmt.Println("Signed integers:", i, i8, i16, i32, i64)
 	fmt.Println("Unsigned integers:", u, u8, u16, u32, u64)
-	
+
 	// Section2: Floating Point
 	// Section2-A : Float32
 	// This is used for less precise calculations
+	// what is precision? Precision is the number of digits that can be represented after the decimal point. The more precision, the more accurate the calculations will be.
 	var f32 float32 = 10.6
 	// Section2-B : Float64
 	var f64 float64 = 10.6
@@ -63,10 +67,10 @@ func main() {
 	fmt.Println("Is On:", isOn)
 
 	// Section4: Complex Data Type
-	var CN1 complex128 = complex(5,10)
-	var CN2 complex64 = complex(2,7)
-	// print(CN1)
-	// print(CN2)
+	// have two parts: real and imaginary
+	//1, real part is the first number and the imaginary part is the second number
+	var CN1 complex128 = complex(5, 10)
+	var CN2 complex64 = complex(2, 7)
 	fmt.Println("CN1: ", CN1)
 	fmt.Println("CN2: ", CN2)
 
